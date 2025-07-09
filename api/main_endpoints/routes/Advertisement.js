@@ -63,8 +63,6 @@ router.post('/deleteAdvertisement', async (req, res) => {
   } else if (!await decodeToken(req)) {
     return res.sendStatus(UNAUTHORIZED);
   }
-  console.log("expire date in delete " + expireDate);
-
   Advertisement.deleteOne({ _id: req.body._id })
     .then(result => {
       if (result.deletedCount < 1) { // used to be result.n
