@@ -40,7 +40,6 @@ router.post('/createAdvertisement', async (req, res) => {
   } else if (!await decodeToken(req)) {
     return res.sendStatus(UNAUTHORIZED);
   }
-  const now = new Date();
 
   const newAd = new Advertisement({
     message: req.body.message,
