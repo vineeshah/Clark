@@ -1,7 +1,3 @@
-import { getActionDescription } from './getActionDescription';
-import { formatDetails } from './formatDetails';
-import { formatTimestamp } from './formatTimestamp';
-
 const AuditLogCard = ({ log, index }) => {
   const hasDetails = log => {
     return log.details && Object.keys(log.details).length > 0;
