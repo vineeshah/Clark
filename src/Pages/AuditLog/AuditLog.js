@@ -4,8 +4,6 @@ import Pagination from './Components/Pagination';
 import { useSCE } from '../../Components/context/SceContext';
 import AuditLogCard from './Components/AuditLogCard';
 import FilterActivityTypes from './Components/FilterActivityTypes';
-import FirstNameFilter from './Components/FirstNameFilter';
-import LastNameFilter from './Components/LastNameFilter';
 
 export default function AuditLogPage() {
   const [auditLogsData, setAuditLogsData] = useState({ items: [], totalLogs: 0 });
