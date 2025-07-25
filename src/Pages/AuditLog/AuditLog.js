@@ -3,7 +3,6 @@ import { getAllLogs } from '../../APIFunctions/AuditLog';
 import Pagination from './Components/Pagination';
 import { useSCE } from '../../Components/context/SceContext';
 import AuditLogCard from './Components/AuditLogCard';
-import FilterActivityTypes from './Components/FilterActivityTypes';
 
 export default function AuditLogPage() {
   const [auditLogsData, setAuditLogsData] = useState({ items: [], totalLogs: 0 });
@@ -36,6 +35,21 @@ export default function AuditLogPage() {
     'VERIFY_CARD',
     'ADD_CARD',
     'DELETE_CARD',
+  ];
+
+  const toggleActivityFilter = activity => {
+    setActivityFilters(prev => (prev.includes(activity) ? prev.filter(a => a !== activity) : [...prev, activity]));
+  };
+
+  const activityTypes = [
+    'SIGN_UP',
+    'LOG_IN',
+    'UPDATE_USER',
+    'PRINT_PAGE',
+    'VERIFY_EMAIL',
+    'EMAIL_SENT',
+    'CHANGE_PW',
+    'RESET_PW',
   ];
 
   const getAuditLogsFromDB = async () => {
