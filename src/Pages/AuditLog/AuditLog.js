@@ -4,7 +4,6 @@ import Pagination from './Components/Pagination';
 import { useSCE } from '../../Components/context/SceContext';
 import AuditLogCard from './Components/AuditLogCard';
 import FilterActivityTypes from './Components/FilterActivityTypes';
-import RefreshButton from './Components/RefreshButton';
 import FirstNameFilter from './Components/FirstNameFilter';
 import LastNameFilter from './Components/LastNameFilter';
 
@@ -83,7 +82,6 @@ export default function AuditLogPage() {
 
   const itemsPerPage = 50;
   const totalPages = Math.ceil(auditLogsData.totalLogs / itemsPerPage);
-  const currentLogs = auditLogsData.items;
 
   const goToPage = page => {
     setCurrentPage(Math.max(0, Math.min(page, totalPages - 1)));
