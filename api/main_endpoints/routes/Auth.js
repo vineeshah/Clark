@@ -304,7 +304,7 @@ router.post('/validatePasswordReset', async (req, res) => {
     if (!passwordReset) {
       return res
         .status(NOT_FOUND)
-        .send({ message: 'Invalid or expired reset token.' });
+        .send({ message: 'Invalid or expired reset tokennn.' });
     }
     res.sendStatus(OK);
   } catch (error) {
@@ -354,3 +354,4 @@ router.post('/resetPassword', async (req, res) => {
 });
 
 module.exports = router;
+
